@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        h1{
+          flex-direction: column;
+          border-radius: none;
+          font-weight: 500;
+          font-size: 2rem;
+          
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainDiv">
+     
+    </div>
+
+   
+    
+    <script>
+
+        var data = getProducts();
+
+        var ProductList = localStorage.getItem("ProductList");
+        !ProductList && localStorage.setItem("ProductList", JSON.stringify(data));
+
+        let isUserListExist = localStorage.getItem("userList");
+        !isUserListExist && localStorage.setItem("userList", "[]");
+
+        createHeader();
+        createCart(data);
+
+        (!localStorage.getItem("cartList")) && localStorage.setItem("cartList","[]");
+    </script>
+   
+</body>
+
+</html>
